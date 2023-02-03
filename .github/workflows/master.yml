@@ -1,0 +1,17 @@
+name: action2
+on:
+  schedule:
+    - cron: '0 2,4,7,8,11,14 * * *'
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@master #采用main分支下的
+      - name: 安装node
+        uses: actions/setup-node@v2 #安装node.js
+        with:
+          node-version: '14'
+      - name: node执行js脚本
+        run: |
+            node ./index.js
