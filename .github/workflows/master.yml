@@ -14,4 +14,3 @@ jobs:
           node-version: '14'
       - name: node执行js脚本
         run: |
-            node ./index.js
